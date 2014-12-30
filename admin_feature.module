@@ -5,3 +5,45 @@
  */
 
 include_once 'admin_feature.features.inc';
+
+/**
+ * Implements hook_date_formats(). Inserted by Alec, not by Features.
+ */
+function admin_feature_date_formats() {
+  return array(
+    // Creates a new format for a new, custom format type.
+    array(
+      'type' => 'short_month',
+      'format' => 'M',
+      'locales' => array(),
+    ),
+    // Defines a format and makes it available to core's short format type.
+    array(
+      'type' => 'normal',
+      'format' => 'M d, Y',
+      'locales' => array(),
+    ),
+    array(
+      'type' => 'day_number',
+      'format' => 'd',
+      'locales' => array(),
+    ),
+    array(
+      'type' => 'numbers',
+      'format' => 'm/d/Y',
+      'locales' => array(),
+    ),
+  );
+}
+
+/**
+ * Implements hook_date_format_types(). Inserted by Alec, not by Features.
+ */
+function admin_feature_date_format_types() {
+  return array(
+    'short_month' => t('Month Abbreviated'),
+    'normal' => t('Normal'),
+    'day_number' => t('Day Number'),
+    'numbers' => t('Numerical'),
+   );
+}
