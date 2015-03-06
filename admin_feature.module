@@ -47,3 +47,23 @@ function admin_feature_date_format_types() {
     'numbers' => t('Numerical'),
    );
 }
+
+
+/**
+ * Customize Media Stuff
+ */
+function admin_feature_preprocess_media_dialog_page(&$vars) {
+    if (isset($vars['page']['content']['system_main']['tabset']['tabs']['#primary'])
+		&& is_array($vars['page']['content']['system_main']['tabset']['tabs']['#primary'])) {
+		foreach ($vars['page']['content']['system_main']['tabset']['tabs']['#primary']
+		as $key => $element) {
+			$markup = $element['element']['#markup'];
+			$markup = str_replace('Library (MBP)','Media Library',$markup);
+			$markup = str_replace('My files (MBP)','My Media',$markup);
+			$vars['page']['content']['system_main']['tabset']['tabs']['#primary'][$key]['element']['#markup'] = $markup;
+//		dpm($element);
+//		$vars['page']['content']['system_main']['tabset']['tabs']['#primary'][$key]['element']['#markup'] = 'stuff';
+		}
+	}
+//	$vars['page']['content']['system_main']['tabset']['tabs']['#primary'] = array();
+}
