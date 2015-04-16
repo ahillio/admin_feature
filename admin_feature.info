@@ -1,7 +1,7 @@
 name = admin_feature
 core = 7.x
 package = Features
-dependencies[] = admin_menu_toolbar
+dependencies[] = adminimal_admin_menu
 dependencies[] = admin_views
 dependencies[] = ckeditor
 dependencies[] = contextual
@@ -10,7 +10,6 @@ dependencies[] = features
 dependencies[] = field_ui
 dependencies[] = filter
 dependencies[] = linkit
-dependencies[] = media_browser_plus
 dependencies[] = media_bulk_upload
 dependencies[] = media_wysiwyg
 features[ckeditor_profile][] = Full
